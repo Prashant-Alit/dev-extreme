@@ -1,5 +1,5 @@
 
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import 'devextreme/dist/css/dx.light.css';
 import { TextBox } from 'devextreme-react/text-box';
 import { Button } from 'devextreme-react/button';
@@ -9,19 +9,24 @@ import { SelectBox } from 'devextreme-react/select-box'
 
 import "./App.css"
 
-// const handleClick = (e) => {
-//   const buttonText = e.component.option('text');
-//   notify(`The ${capitalize(buttonText)} button was clicked`);
-// };
-// function capitalize(text) {
-//   return text.charAt(0).toUpperCase() + text.slice(1);
-// }
-
 export default function App() {
   const [inputValue, setInputValue] = useState();
   const [email, setEmailValue] = useState();
   const [password, setPassword] = useState()
   const [showData,setShowData] = useState(false)
+
+  const data = [
+    {
+      ID: 1,
+      Name: 'Male'
+      },
+    {
+      ID: 2,
+      Name: 'Female'
+      },
+    
+  ]
+  
 
   const handleInput = (e) => {
     setInputValue(e.value)
@@ -36,7 +41,6 @@ export default function App() {
   }
 
   const handleSubmit = () => {
-    console.log("submit is clickd")
     setShowData(true)
     if (inputValue && email && password){
        notify(`The Data is stored`);
@@ -70,19 +74,23 @@ export default function App() {
               <SelectBox
                 className='inputBox'
                 searchEnabled={true}
+                dataSource={data}
                 displayExpr={"Name"}
                 valueExpr={"ID"}
                 showDropDownButton={true}
-                label="Select name"
+                label="Select gender"
                 labelMode="floating"
               />
               <div className='btn-container'>
                 <Button
-                  className='btn'
-                  type="success"
+                  // className='btn'
+                   type="success"
                    text="Submit"
-                   useSubmitBehavior={true}
-                  onClick={handleSubmit}
+                   useSubmitBehavior={true} 
+                   width={300} 
+                   style={{marginTop:"20px"}}
+                   onClick={handleSubmit}
+                   stylingMode={"contained"}
                 />
               </div>
             {showData ?  <div className='showData'>
