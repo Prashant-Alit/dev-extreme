@@ -1,11 +1,11 @@
 
-import React, { useState } from 'react';
+import React, { useCallback,  useState } from 'react';
 import 'devextreme/dist/css/dx.light.css';
 import { TextBox } from 'devextreme-react/text-box';
 import { Button } from 'devextreme-react/button';
 import Validator, { RequiredRule } from 'devextreme-react/validator';
 import { SelectBox } from 'devextreme-react/select-box'
- import notify from 'devextreme/ui/notify';
+import notify from 'devextreme/ui/notify';
 
 import "./App.css"
 
@@ -13,37 +13,47 @@ export default function App() {
   const [inputValue, setInputValue] = useState();
   const [email, setEmailValue] = useState();
   const [password, setPassword] = useState()
-  const [showData,setShowData] = useState(false)
+  const [showData, setShowData] = useState(false)
+  const [selectValue, setSelectValue] = useState()
 
   const data = [
     {
       ID: 1,
       Name: 'Male'
-      },
+    },
     {
       ID: 2,
       Name: 'Female'
-      },
-    
+    },
+
   ]
-  
 
-  const handleInput = (e) => {
+  // const selectBoxAttributes = useMemo({
+  //   id: 'elementId',
+  //   class: 'class-name'
+  // }, []);
+
+  const onNameValueChanged = useCallback((args) => {
+    setSelectValue(args.value);
+  },[])
+
+
+  const handleInput = useCallback((e) => {
     setInputValue(e.value)
-  }
+  },[])
 
-  const handlePasswordInput = (args) => {
+  const handlePasswordInput = useCallback((args) => {
     setPassword(args.value)
-  }
+  },[])
 
-  const handleEmaiInput = (args) => {
+  const handleEmaiInput = useCallback((args) => {
     setEmailValue(args.value)
-  }
+  },[])
 
   const handleSubmit = () => {
     setShowData(true)
-    if (inputValue && email && password){
-       notify(`The Data is stored`);
+    if (inputValue && email && password && selectValue) {
+      notify(`The Data is stored`);
     } else {
       notify('something wnet wrong')
     }
@@ -73,8 +83,10 @@ export default function App() {
 
               <SelectBox
                 className='inputBox'
-                searchEnabled={true}
+                // searchEnabled={true}
                 dataSource={data}
+                // elementAttr={selectBoxAttributes}
+                onValueChanged={onNameValueChanged}
                 displayExpr={"Name"}
                 valueExpr={"ID"}
                 showDropDownButton={true}
@@ -84,20 +96,21 @@ export default function App() {
               <div className='btn-container'>
                 <Button
                   // className='btn'
-                   type="success"
-                   text="Submit"
-                   useSubmitBehavior={true} 
-                   width={300} 
-                   style={{marginTop:"20px"}}
-                   onClick={handleSubmit}
-                   stylingMode={"contained"}
+                  type="success"
+                  text="Submit"
+                  useSubmitBehavior={true}
+                  width={300}
+                  style={{ marginTop: "20px" }}
+                  onClick={handleSubmit}
+                  stylingMode={"contained"}
                 />
               </div>
-            {showData ?  <div className='showData'>
-              <h1 className='showData-items'>{inputValue}</h1>
-              <h1 className='showData-items'>{email}</h1>
-              <h1 className='showData-items'>{password}</h1>
-             </div> : ""}
+              {showData ?
+                <div className='showData'>
+                  <h1 className='showData-items'>{inputValue}</h1>
+                  <h1 className='showData-items'>{email}</h1>
+                  <h1 className='showData-items'>{password}</h1>
+                </div> : ""}
             </div>
           </div>
         </div>
