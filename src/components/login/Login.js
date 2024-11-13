@@ -24,7 +24,10 @@ export const Login = () => {
   }, [])
 
   const handleSubmit = () => {
-    notify(`The Data is stored`);
+    if(inputValue && email && password){
+      notify(`The Data is stored`);
+    }
+    
   }
 
   return (

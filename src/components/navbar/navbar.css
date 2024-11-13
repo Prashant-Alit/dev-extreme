@@ -15,9 +15,18 @@
 .dx-list-item-icon {
     margin-right: 10px;
 }
+.dx-theme-generic-typography a{
+    text-decoration: none;
+}
+
+.dx-drawer-shrink .dx-drawer-panel-content{
+    border-right: 1px solid #333;
+}
 #view {
     margin-left: 10px;
     margin-top: 10px;
+    /* display: flex; */
+    justify-self: center
 }
 
 .render-data-container{

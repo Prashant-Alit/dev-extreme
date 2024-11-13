@@ -1,6 +1,6 @@
 
 import { DataGrid } from 'devextreme-react';
-import { Column } from 'devextreme-react/cjs/data-grid';
+import { Column, Editing } from 'devextreme-react/cjs/data-grid';
 
 
 const Employe = [
@@ -37,6 +37,11 @@ export const CustomDataGrid = () => {
                     dataField="BirthDate"
                     dataType="date">
                 </Column>
+                <Editing
+                    allowUpdating={true}
+                    allowAdding={true}
+                    allowDeleting={true}
+                    mode="row" />
                 </DataGrid>
         </>
     )

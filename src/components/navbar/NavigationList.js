@@ -36,7 +36,7 @@ function NavigationList(props){
                 <List
 
                     items={navigation}
-                    width={400}
+                    width={200}
                     // height={1000}
                     selectionMode="single"
                     onSelectionChanged={closeDrawer}
