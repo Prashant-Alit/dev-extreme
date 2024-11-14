@@ -1,4 +1,4 @@
-.demo-container {
+/* .demo-container {
   display: flex;
   justify-content: center;
   height: 450px;
@@ -10,12 +10,12 @@
 }
 
 .buttons-demo {
-  /* width: 00px; */
+  /* width: 00px; 
   margin-top: 20px;
   align-self: center;
   display: flex;
   justify-content: center;
-  /* border: 1px solid black; */
+  /* border: 1px solid black; 
 }
 
 .buttons-column > .column-header {
@@ -78,4 +78,4 @@
 
 .datagrid{
   width: 400px;
-}
+} */

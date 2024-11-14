@@ -1,14 +1,15 @@
 
 import React from 'react';
 
-import { Navbar } from './components';
-import "./App.css"
+import { CustomDataGrid, Navbar } from './components';
+// import "./App.css"
 
 export default function App() {
   
   return (
     <div >
-      <Navbar />  
+      {/* <Navbar />   */}
+      <CustomDataGrid/>
     </div >
   );
 }

@@ -16,7 +16,6 @@ function NavigationList(props){
     }
 
     const renderItem = useCallback((data) => {
-        console.log("data inside navigation list",data)
         return (
             <div>
                 <Link to={'/' + data.path}>
