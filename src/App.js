@@ -8,8 +8,8 @@ export default function App() {
   
   return (
     <div >
-      {/* <Navbar />   */}
-      <CustomDataGrid/>
+      <Navbar />  
+      {/* <CustomDataGrid/> */}
     </div >
   );
 }

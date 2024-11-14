@@ -1,6 +1,6 @@
 
 import { DataGrid } from 'devextreme-react';
-import { Column, Editing, FilterRow, GroupPanel, HeaderFilter, MasterDetail, Pager, Scrolling, SearchPanel } from 'devextreme-react/cjs/data-grid';
+import { Column, Editing, FilterRow, GroupPanel, HeaderFilter, MasterDetail, Pager, Scrolling, SearchPanel, Selection } from 'devextreme-react/cjs/data-grid';
 import { useEffect, useState } from 'react';
 import { getPostData } from '../apiservices/apiservices';
 import {Employe} from "../../helper/helper"
@@ -32,7 +32,7 @@ export const CustomDataGrid = () => {
   }
   return (
     <div className='grid-container'>
-     <div><h1>Data Grid</h1></div>
+     <div><h1 className='grid-heading'>Data Grid</h1></div>
     <div>
       <DataGrid
         style={{ margin: "10px" }}
@@ -45,16 +45,24 @@ export const CustomDataGrid = () => {
         focusedRowEnabled={true}
         focusedRowKey={3}
       >
+        <Selection mode="single" />
         <Scrolling mode="virtual" />
-       <FilterRow visible={true} />
+        <FilterRow visible={true} />
         <HeaderFilter visible={true} />
         <SearchPanel
           visible={true}
           width={240}
           highlightCaseSensitive={true}
+          mode="equal"
           placeholder="Search..."
         />
-         <Pager visible={true}  />
+          {/* <Selection
+             mode="single"
+             visible="true"
+             allowSelectAll={true}
+             deferred={true}
+          /> */}
+        <Pager visible={true} defaultPageSize={15} defaultPageIndex={1}  showNavigationButtons={true} />
         <Column dataField="id" sortOrder='desc'width={100} ></Column>
         <Column dataField="FullName" width={250}></Column>
         <Column dataField='Position' width={250}></Column>
@@ -69,7 +77,7 @@ export const CustomDataGrid = () => {
           allowUpdating={true}
           allowAdding={true}
           allowDeleting={true}
-          mode="row"
+          mode="popup" useIcons={true}
         /> 
       </DataGrid>
       </div>
