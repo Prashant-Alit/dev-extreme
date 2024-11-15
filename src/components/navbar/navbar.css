@@ -33,3 +33,27 @@
     display: flex;
     justify-content: center;
 }
+
+/* Make the drawer fixed */
+.dx-drawer {
+    position: fixed;
+    top: 10;
+    left: 0;
+    height: 100vh; /* Full height of the viewport */
+    z-index: 1000; /* Ensures it stays above other content */
+  }
+  
+  /* Ensure the main content adjusts to the drawer */
+  /* #view 
+    margin-left: 250px; /* Adjust based on your drawer's width 
+    padding: 20px;
+    overflow: hidden; /* Prevent the main content from scrolling with the drawer 
+  } */
+  
+  /* Make the DataGrid scrollable */
+   .grid-container {
+    height: calc(100vh - 100px); 
+    overflow: auto;
+    padding: 10px;
+  } 
+  

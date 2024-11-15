@@ -11,6 +11,8 @@ import { CustomDataGrid } from "../datagrid";
 import { CustomDateBox } from "../datebox";
 import { CustomSelectBox } from "../selectbox";
 import { CustomeNumberBox } from "../numberbox/CustomNumberBox";
+import { CustomPopup } from "../popup/CustomPopup";
+import { CustomHtmlEditor } from "../htmleditor/CustomHtmlEditor";
 
 export const Navbar = () => {
     const [isOpened, setState] = useState(false);
@@ -62,6 +64,8 @@ export const Navbar = () => {
                             <Route path="views/datebox" element={<CustomDateBox />} />
                             <Route path="views/select" element={<CustomSelectBox />} />
                             <Route path="views/number" element={<CustomeNumberBox />} />
+                            <Route path="views/popup" element={<CustomPopup />} />
+                            <Route path="views/htmleditor" element={<CustomHtmlEditor />} />
                         </Routes>
                     </div>
                 </Drawer>

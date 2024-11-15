@@ -7,7 +7,9 @@ const navigation = [
     { id: 2, text: "Data Grid", icon: "card", path: "views/datagrid" },
     { id: 3, text: "Date box", icon: "event", path: "views/datebox" },
     { id: 4, text: "Select", icon: "check", path: "views/select" },
-    { id: 5, text: "Number", icon: "plus", path: "views/number" }
+    { id: 5, text: "Number", icon: "plus", path: "views/number" },
+    { id: 6, text: "PopUp", icon: "info", path: "views/popup" },
+    { id: 7, text: "Html Editor", icon: "columnproperties", path: "views/htmleditor" }
 ];
 
 function NavigationList(props){
@@ -25,7 +27,7 @@ function NavigationList(props){
                         </div>
                         <span>{data.text}</span>
                     </div>
-                </Link>
+                </Link> 
             </div>
         );
     }, [])
@@ -33,17 +35,14 @@ function NavigationList(props){
         return (
             <div>
                 <List
-
                     items={navigation}
                     width={200}
-                    // height={1000}
                     selectionMode="single"
                     onSelectionChanged={closeDrawer}
                     itemRender={renderItem}
                 />
             </div>
         );
-
 }
 
 export default NavigationList;
