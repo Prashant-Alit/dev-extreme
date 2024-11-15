@@ -39,10 +39,10 @@ export const CustomDataGrid = () => {
         allowColumnReordering={true}
         columnAutoWidth={true}
         allowColumnResizing={true}
-        focusedRowEnabled={true}
-        focusedRowKey={3}
+        // focusedRowEnabled={true}
+        // focusedRowKey={3}
       >
-        <Selection mode="single" />
+        <Selection mode="single" style={{border:"0.5px solid black"}} />
         <Scrolling mode="standard" />
         <FilterRow visible={true} />
         <HeaderFilter visible={true} />
@@ -54,20 +54,19 @@ export const CustomDataGrid = () => {
           placeholder="Search..."
         />
          <Selection
-             mode="single"
-             visible="true"
-             allowSelectAll={true}
-             deferred={true}
-          /> 
+          mode="multiple"
+          selectAllMode={true}
+          // showCheckBoxesMode={true}
+        /> 
           <Paging defaultPageSize={10} />
-//           <Pager
+          <Pager
             visible={true}
-            allowedPageSizes={[10, 20, 50]}
+            allowedPageSizes={[10, 20, 30]}
             showPageSizeSelector={true}
             showNavigationButtons={true}
             displayMode="full"
           />
-        <Column dataField="id" sortOrder='desc'width={100} ></Column>
+        <Column dataField="id" width={100} ></Column>
         <Column dataField="FullName" width={250}></Column>
         <Column dataField='Position' width={250}></Column>
         <Column dataField='BirthDate' width={250}></Column>
