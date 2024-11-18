@@ -36,10 +36,8 @@ export const CustomDateBox = () => {
       }, [])
 
     const getDisabledDates = (args) => {
-        // console.log("getDisabledDate",args)
         const dayOfWeek = args.date.getDay();
         const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-        // return args.view === "month" && (isWeekend || isHoliday(args.date));
         const anc = disabledDates.some(
           (disabledDate) =>
             args.date.getDate() === disabledDate.getDate() &&
@@ -55,7 +53,6 @@ export const CustomDateBox = () => {
             <h1>Date box</h1>
             <DateBox
                 type="date"
-                // value={dateValue}
                 width={400}
                 onValueChanged={onDateValueChanged}
                 min={min}

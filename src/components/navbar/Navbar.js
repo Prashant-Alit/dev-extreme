@@ -13,6 +13,7 @@ import { CustomSelectBox } from "../selectbox";
 import { CustomeNumberBox } from "../numberbox/CustomNumberBox";
 import { CustomPopup } from "../popup/CustomPopup";
 import { CustomHtmlEditor } from "../htmleditor/CustomHtmlEditor";
+import {EmployeeLogin} from "../../screens/employee-login/EmployeeLogin"
 
 export const Navbar = () => {
     const [isOpened, setState] = useState(false);
@@ -66,6 +67,7 @@ export const Navbar = () => {
                             <Route path="views/number" element={<CustomeNumberBox />} />
                             <Route path="views/popup" element={<CustomPopup />} />
                             <Route path="views/htmleditor" element={<CustomHtmlEditor />} />
+                            <Route path="views/employeelogin" element={<EmployeeLogin />} />
                         </Routes>
                     </div>
                 </Drawer>

@@ -14,13 +14,12 @@ export const CustomPopup = () => {
   const buttonOptions = {
     text: "Refresh",
     onClick: function () {
-      console.log("newpopo");
       handleNewPopup();
     },
   };
 
   const handleNewPopup = () => {
-    console.log("handlenewpopup");
+    ("handlenewpopup");
     return (
       <>
         <Popup

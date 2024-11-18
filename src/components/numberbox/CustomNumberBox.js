@@ -4,7 +4,7 @@ import { NumberBox } from "devextreme-react"
 export const CustomeNumberBox = () => {
 
   const handleNumberInput =( ) => {
-    console.log("handle number input is clicked")
+   
   }
 
     return (
