@@ -13,15 +13,13 @@ export const CustomDataGrid = () => {
 
   useEffect(() => {
     const post = getPostData();
-    console.log("post data", post)
     post.then((res) => setPostData(res))
-      .catch((error) => console.log("eeeee", error))
+      .catch((error) =>{return error})
     setPostData(post)
   }, [])
 
   useEffect(() => {
     setTimeout(() => {
-      console.log("setitme out")
       setLoadVisible(false)
     },2000)
   },[])
