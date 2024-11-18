@@ -9,7 +9,8 @@ const navigation = [
     { id: 4, text: "Select", icon: "check", path: "views/select" },
     { id: 5, text: "Number", icon: "plus", path: "views/number" },
     { id: 6, text: "PopUp", icon: "info", path: "views/popup" },
-    { id: 7, text: "Html Editor", icon: "columnproperties", path: "views/htmleditor" }
+    { id: 7, text: "Html Editor", icon: "columnproperties", path: "views/htmleditor" },
+    { id: 8, text: "Login Form", icon: "user", path: "views/employeelogin" }
 ];
 
 function NavigationList(props){
